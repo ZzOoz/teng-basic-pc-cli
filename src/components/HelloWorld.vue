@@ -1,37 +1,60 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import useUserStore from '@/store/modules/user'
+
 defineProps<{ msg: string }>()
 
 const count = ref(0)
+
+const userStore = useUserStore()
+userStore.changeUserName({
+  userName: 'haha',
+  userId: 123
+})
 </script>
 
 <template>
+  <h1>userStore: {{ userStore.userInfo.userName }}</h1>
   <h1>{{ msg }}</h1>
 
-  <div class="card">
-    <button type="button" @click="count++">count is {{ count }}</button>
-    <p>
-      Edit
-      <code>components/HelloWorld.vue</code> to test HMR
-    </p>
-  </div>
+  <p>
+    Recommended IDE setup:
+    <a href="https://code.visualstudio.com/" target="_blank">VS Code</a>
+    +
+    <a href="https://github.com/johnsoncodehk/volar" target="_blank">Volar</a>
+  </p>
+
+  <p>See <code>README.md</code> for more information.</p>
 
   <p>
-    Check out
-    <a href="https://vuejs.org/guide/quick-start.html#local" target="_blank"
-      >create-vue</a
-    >, the official Vue + Vite starter
+    <a href="https://vitejs.dev/guide/features.html" target="_blank">
+      Vite Docs
+    </a>
+    |
+    <a href="https://v3.vuejs.org/" target="_blank">Vue 3 Docs</a>
   </p>
+
+  <button type="button" @click="count++">count is: {{ count }}</button>
   <p>
-    Install
-    <a href="https://github.com/johnsoncodehk/volar" target="_blank">Volar</a>
-    in your IDE for a better DX
+    Edit
+    <code>components/HelloWorld.vue</code> to test hot module replacement.
   </p>
-  <p class="read-the-docs">Click on the Vite and Vue logos to learn more</p>
 </template>
 
 <style scoped>
-.read-the-docs {
-  color: #888;
+a {
+  color: #42b983;
+}
+
+label {
+  margin: 0 0.5em;
+  font-weight: bold;
+}
+
+code {
+  padding: 2px 4px;
+  color: #304455;
+  background-color: #eee;
+  border-radius: 4px;
 }
 </style>
