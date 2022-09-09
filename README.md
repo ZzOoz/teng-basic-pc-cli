@@ -159,3 +159,24 @@ export default defineConfig({
   ]
 })
 ```
+
+#### vscode 下的 settings.json 设置
+
+```json
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll": false,
+    /// eslint和stylelint保存时格式化
+    "source.fixAll.eslint": true,
+    "source.fixAll.stylelint": true
+  },
+  // 保存的时候自动格式化
+  "editor.formatOnSave": true,
+  // 默认格式化工具选择prettier
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  // 配置该项，新建文件时默认就是space：2
+  "editor.tabSize": 2,
+  // stylelint校验的文件格式
+  "stylelint.validate": ["css", "less", "vue", "html"]
+}
+```
