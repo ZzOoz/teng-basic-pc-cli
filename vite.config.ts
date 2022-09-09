@@ -19,6 +19,14 @@ export default defineConfig({
       resolvers: [ElementPlusResolver()]
     })
   ],
+  /// 全局引入css
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: '@import "@/assets/styles/scss/global.scss";' // 添加公共样式
+      }
+    }
+  },
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),

@@ -2,7 +2,7 @@ PC 端项目基础框架搭建
 
 插件使用
 
-基础：**Vue 3.2.37 + Vue-router 4.1.5 + pinia 2.0.22 + axios 0.27.2**
+基础：**Vue 3.2.37 + Vue-router 4.1.5 + pinia 2.0.22 + axios 0.27.2 + "vite": "^3.1.0" + "sass": "^1.54.9"**
 
 代码规范：**eslint 8.23.0 + "prettier": "^2.7.1" + "stylelint": "^14.11.0"**
 

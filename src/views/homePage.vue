@@ -36,6 +36,8 @@
       <el-button type="warning" :icon="Star" circle />
       <el-button type="danger" :icon="Delete" circle />
     </el-row>
+
+    <div class="primary-color">测试全局样式</div>
   </div>
 </template>
 
@@ -51,6 +53,9 @@ import {
 } from '@element-plus/icons-vue'
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 /* Only comments */
+.primary-color {
+  color: $primary-color;
+}
 </style>
