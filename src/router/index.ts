@@ -17,9 +17,6 @@ const router = createRouter({
  * 路由初始化函数
  * @param app
  */
-
-console.log('路由:', routes)
-
 export const setupRouter = (app: App<Element>) => {
   app.use(router)
 }

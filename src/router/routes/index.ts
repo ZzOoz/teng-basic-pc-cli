@@ -24,10 +24,8 @@ const pages = import.meta.glob('../../views/*.vue')
 // })
 
 const routes: RouteRecordRaw[] = Object.keys(pages).map((path: string) => {
-  console.log(path, 'path')
   const name = (path.match(/\.\.\/views\/(.*)\.vue$/) as any)[1]
   const routePath = `/${name}`
-  console.log(routePath, 'poath')
   if (routePath === '/home') {
     return {
       path: '/',
@@ -46,7 +44,7 @@ const routes: RouteRecordRaw[] = Object.keys(pages).map((path: string) => {
 const rootRoute: RouteRecordRaw = {
   path: '/',
   name: 'root',
-  redirect: '/home'
+  redirect: '/homePage'
 }
 
 // 404页面
@@ -55,7 +53,7 @@ const notFoundPage: RouteRecordRaw = {
   // 官方文档：https://next.router.vuejs.org/zh/guide/migration/index.html#%E5%88%A0%E9%99%A4%E4%BA%86-%EF%BC%88%E6%98%9F%E6%A0%87%E6%88%96%E9%80%9A%E9%85%8D%E7%AC%A6%EF%BC%89%E8%B7%AF%E7%94%B1
   path: '/:pathMatch(.*)*',
   name: 'notFound',
-  component: () => import('@/views/common/notFound.vue')
+  component: () => import('@/views/notFound.vue')
 }
 
-export default [rootRoute, ...routes]
+export default [rootRoute, ...routes, notFoundPage]
